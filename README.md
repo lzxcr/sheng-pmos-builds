@@ -5,6 +5,9 @@ All the files here have been contributed by other users, here you will find a gu
 
 **IF YOU AREN'T COMFORTABLE MODDING YOUR TABLET OR ITS PARTITION TABLE OR YOU ARE PARANOID OF BRICKING YOUR DEVICE CLICK AWAY NOW!!! YOU HAVE BEEN WARNED, YOU ARE ON YOUR OWN IF YOU BRICK YOUR DEVICE!!! AGAIN! YOU HAVE BEEN WARNED!!!**
 
+# Status
+
+You can check [Here](https://wiki.postmarketos.org/wiki/Xiaomi_Pad_6S_Pro_12.4_(xiaomi-sheng))
 
 # Installation Guide
 Please follow the guide carefully
@@ -122,6 +125,21 @@ Please follow the guide carefully
     ```bash
 	fastboot reboot
 	```
+
+# Fix Sensor
+1. Download all apk files from [Here](https://github.com/alghiffaryfa19/sheng-pmos-builds/releases/tag/sensor)
+2. Run this command
+	```bash
+	sudo apk add *apk
+	```
+3. Enable and start services
+	```bash
+	sudo systemctl enable iio-sensor-proxy
+	sudo systemctl start iio-sensor-proxy
+	sudo systemctl enable adsprpcd-sensorspd
+	sudo systemctl start adsprpcd-sensorspd
+	```
+4. Reboot
 
 # Switch OS
 1. From Android to Linux
