@@ -45,9 +45,9 @@ jobs:
           git reset --hard sheng
 
 
-      # - name: Install zstd in chroot
-      #   run: |
-      #     pmbootstrap chroot -- apk add zstd
+      - name: Install zstd in chroot
+        run: |
+          pmbootstrap chroot -- apk add zstd
 
       - name: Build the xiaomi-sheng without DE
         run: |
@@ -56,7 +56,6 @@ jobs:
            pmbootstrap checksum firmware-xiaomi-sheng
            pmbootstrap checksum linux-postmarketos-qcom-sm8550
            cat ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-postmarketos-qcom-sm8550/APKBUILD
-           pmbootstrap chroot -- apk add zstd
            pmbootstrap install --password 147147
            pmbootstrap export
            cp /tmp/postmarketOS-export/boot.img out/boot-xiaomi-sheng.img
