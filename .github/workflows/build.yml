@@ -1,9 +1,4 @@
 name: Xiaomi Pad 6s Pro postmarketOS
-on:
-  push: # Build when push
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * 5' # Start build every friday
 
 jobs:
   build-image:
